@@ -1,0 +1,209 @@
+/* Seu CSS atual aqui (sem alterações) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.inicio {
+    background-color: #0d0d0d;
+    color: #e0ffe0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ==== Página Inicial ==== */
+.container-inicio {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+}
+
+.imagem-inicio {
+    flex: 1;
+}
+
+.imagem-inicio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.conteudo-inicio {
+    flex: 1;
+    background-color: #1e1e1e;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.conteudo-inicio h1 {
+    font-size: 2.5rem;
+    color: #fcd34d;
+}
+
+.conteudo-inicio p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Estilo para o seletor de dificuldade */
+#dificuldade {
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #4CAF50;
+    background-color: #f8fff8;
+    color: #333;
+    outline: none;
+    margin: 10px 0 20px;
+    transition: 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    width: 100px;
+}
+
+#dificuldade:hover {
+    background-color: #e6ffe6;
+    border-color: #45a049;
+}
+
+#dificuldade:focus {
+    border-color: #388e3c;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.conteudo-inicio button {
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.conteudo-inicio button:hover {
+    background-color: #1d4ed8;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #1d4ed8;
+}
+
+#ranking {
+    background-color: #292929;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 10px;
+    list-style: none;
+}
+
+#ranking li {
+    margin-bottom: 5px;
+    color: #fcd34d;
+    transition: all 0.3s ease;
+}
+
+#ranking li:hover {
+    transform: translateX(5px);
+    color: #fde68a;
+}
+
+.ranking h2 {
+    margin-bottom: 10px;
+}
+
+.ranking select {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: white;
+}
+
+.ranking ol {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.ranking li {
+    margin-bottom: 5px;
+    color: #fcd34d;
+    transition: all 0.3s ease;
+}
+
+.ranking li:hover {
+    transform: translateX(5px);
+    color: #fde68a;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 900px) {
+    .container-inicio {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .imagem-inicio {
+        height: 250px; /* altura fixa para imagem no topo */
+        flex: none;
+    }
+
+    .imagem-inicio img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .conteudo-inicio {
+        padding: 30px 20px;
+        flex: none;
+    }
+
+    .conteudo-inicio h1 {
+        font-size: 2rem;
+    }
+
+    .conteudo-inicio p {
+        font-size: 1rem;
+    }
+
+    #dificuldade {
+        width: 100%; /* ocupar toda largura para melhor toque */
+        max-width: 300px;
+    }
+
+    .conteudo-inicio button {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px 0;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .conteudo-inicio {
+        padding: 20px 15px;
+        gap: 20px;
+    }
+
+    .conteudo-inicio h1 {
+        font-size: 1.5rem;
+    }
+
+    .conteudo-inicio p {
+        font-size: 0.9rem;
+    }
+
+    #dificuldade {
+        max-width: 100%;
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .conteudo-inicio button {
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+}

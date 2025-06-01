@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Veterinária - Início</title>
+    <link rel="stylesheet" href="style-index.css">
+</head>
+<body class="inicio">
+
+    <div class="container-inicio">
+        <div class="imagem-inicio">
+            <img src="img1.jpg" alt="Cachorro Veterinário">
+        </div>
+        <div class="conteudo-inicio">
+            <h1>Você conhece um pouco sobre a Medicina Veterinária?</h1>
+            <p>Este quiz tem 12 perguntinhas básicas, mas vai dificultando um pouquinho. 
+            Acerte mais de 6 e ganhe uma balinha! 🐾</p>
+
+            <h2>🏆 Ranking</h2>
+            <label for="dificuldade">Dificuldade:</label>
+            <select id="dificuldade">
+              <option value="facil">Fácil</option>
+              <option value="medio">Médio</option>
+              <option value="dificil">Difícil</option>
+            </select>
+            <ul id="ranking"></ul>
+
+            <button onclick="iniciarQuiz()">🐶 Bora Jogar!</button>
+        </div>
+    </div>
+
+<script>
+    function iniciarQuiz() {
+        window.location.href = "quiz.html";
+    }
+
+    function atualizarRanking() {
+        const dificuldade = document.getElementById('dificuldade').value;
+        const ranking = JSON.parse(localStorage.getItem(`ranking_${dificuldade}`)) || [];
+        const rankingEl = document.getElementById('ranking');
+        rankingEl.innerHTML = ranking.map((item, index) => 
+            `<li>${index + 1}º - ${item.nome} 🏅 ${item.pontuacao} pts</li>`
+        ).join('');
+    }
+
+    // Carrega ranking padrão ao abrir a página (fácil)
+    window.onload = () => {
+        document.getElementById('dificuldade').value = 'facil';
+        atualizarRanking();
+    };
+
+    // Atualiza ranking ao trocar a dificuldade
+    document.getElementById('dificuldade').addEventListener('change', atualizarRanking);
+</script>
+</body>
+</html>

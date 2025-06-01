@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quiz Veterinária - Jogo</title>
+    <link rel="stylesheet" href="style-quiz.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <h1>🐾 Quiz Veterinária</h1>
+
+        <!-- Botão Sair do Quiz -->
+        <button id="btn-sair" class="btn-sair">Sair</button>
+
+        <div class="config">
+            <label for="dificuldade">Dificuldade:</label>
+            <select id="dificuldade">
+                <option value="facil">Fácil</option>
+                <option value="medio">Médio</option>
+                <option value="dificil">Difícil</option>
+            </select>
+            <button id="start">Iniciar Quiz</button>
+        </div>
+
+        <div class="quiz" id="quiz">
+            <div id="pergunta">Clique em iniciar para começar!</div>
+            <div class="opcoes" id="opcoes"></div>
+            <div class="info">
+                <span id="pontuacao">Pontos: 0</span>
+                <span id="timer">Tempo: 15</span>
+            </div>
+        </div>
+    </div>
+
+    <audio id="som-acerto" src="acerto.mp3"></audio>
+    <audio id="som-erro" src="erro.mp3"></audio>
+
+    <script src="script-quiz.js"></script>
+
+    <script>
+        document.getElementById('btn-sair').addEventListener('click', () => {
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>
